@@ -40,7 +40,9 @@ class ValuesTestCase(TestCase):
     def test_pet_people_success_none_deleted(self):
         expected = ["John", "Sally"]
         found = list(
-            Pet.objects.filter(name="Mittens").values_list(
+            Pet.objects
+            .filter(name="Mittens")
+            .values_list(
                 "people__name", flat=True)
         )
 
