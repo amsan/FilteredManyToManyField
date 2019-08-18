@@ -1,0 +1,107 @@
+[
+    {
+        "model": "filtered_many_to_many.person",
+        "pk": "79009a7b-1c01-4653-870d-ae120166daf3",
+        "fields": {
+            "name": "Lesley"
+        }
+    },
+    {
+        "model": "filtered_many_to_many.person",
+        "pk": "89c3dd62-2e1d-435c-ab55-7e3cfb8c5cf0",
+        "fields": {
+            "name": "Sally"
+        }
+    },
+    {
+        "model": "filtered_many_to_many.person",
+        "pk": "d54ede1a-73eb-4669-84d5-951f2ce8cb01",
+        "fields": {
+            "name": "John"
+        }
+    },
+    {
+        "model": "filtered_many_to_many.pet",
+        "pk": "b468346c-58b1-48db-b01d-dba51cca425e",
+        "fields": {
+            "name": "Mittens"
+        }
+    },
+    {
+        "model": "filtered_many_to_many.pet",
+        "pk": "ef838895-389d-4abd-b046-979f10e686dc",
+        "fields": {
+            "name": "Boo"
+        }
+    },
+    {
+        "model": "filtered_many_to_many.pet",
+        "pk": "fbb8dc5a-b89d-4582-9ac0-ca9ca76a3753",
+        "fields": {
+            "name": "Fluffy"
+        }
+    },
+    {
+        "model": "filtered_many_to_many.personpets",
+        "pk": "21f84156-1973-41ef-a078-ca0e2666f931",
+        "fields": {
+            "person": "d54ede1a-73eb-4669-84d5-951f2ce8cb01",
+            "pet": "b468346c-58b1-48db-b01d-dba51cca425e",
+            "is_deleted": false
+        }
+    },
+    {
+        "model": "filtered_many_to_many.personpets",
+        "pk": "2d5231e5-07c6-40d8-845a-82afae7020a0",
+        "fields": {
+            "person": "79009a7b-1c01-4653-870d-ae120166daf3",
+            "pet": "ef838895-389d-4abd-b046-979f10e686dc",
+            "is_deleted": true
+        }
+    },
+    {
+        "model": "filtered_many_to_many.personpets",
+        "pk": "3c5a6ad1-82b4-445b-9cab-45dbbe227d10",
+        "fields": {
+            "person": "d54ede1a-73eb-4669-84d5-951f2ce8cb01",
+            "pet": "fbb8dc5a-b89d-4582-9ac0-ca9ca76a3753",
+            "is_deleted": false
+        }
+    },
+    {
+        "model": "filtered_many_to_many.personpets",
+        "pk": "9c1e8b99-9d99-4c66-9829-4d16fef72f68",
+        "fields": {
+            "person": "89c3dd62-2e1d-435c-ab55-7e3cfb8c5cf0",
+            "pet": "b468346c-58b1-48db-b01d-dba51cca425e",
+            "is_deleted": false
+        }
+    },
+    {
+        "model": "filtered_many_to_many.personpets",
+        "pk": "aab4d80a-b947-4ee6-b19e-60d207fbd348",
+        "fields": {
+            "person": "89c3dd62-2e1d-435c-ab55-7e3cfb8c5cf0",
+            "pet": "ef838895-389d-4abd-b046-979f10e686dc",
+            "is_deleted": true
+        }
+    },
+    {
+        "model": "filtered_many_to_many.personpets",
+        "pk": "c5afb93a-21d7-4d4f-8c78-c30a975770ed",
+        "fields": {
+            "person": "79009a7b-1c01-4653-870d-ae120166daf3",
+            "pet": "fbb8dc5a-b89d-4582-9ac0-ca9ca76a3753",
+            "is_deleted": true
+        }
+    },
+    {
+        "model": "filtered_many_to_many.personpets",
+        "pk": "cf9cca9d-c501-4767-9092-36de29b4e2b8",
+        "fields": {
+            "person": "89c3dd62-2e1d-435c-ab55-7e3cfb8c5cf0",
+            "pet": "fbb8dc5a-b89d-4582-9ac0-ca9ca76a3753",
+            "is_deleted": false
+        }
+    }
+]
