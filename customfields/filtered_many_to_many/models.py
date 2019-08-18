@@ -2,13 +2,16 @@ import uuid
 
 from django.db import models
 
+from filtered_many_to_many.fields import FilteredManyToManyField
+
 
 class Person(models.Model):
     id = models.UUIDField("id", primary_key=True, default=uuid.uuid4)
     name = models.CharField("name", max_length=255)
 
-    pets = models.ManyToManyField(
+    pets = FilteredManyToManyField(
         "Pet",
+        filter={"is_deleted": False},
         verbose_name="pets",
         related_name="people",
         through="PersonPets",
