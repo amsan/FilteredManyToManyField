@@ -11,7 +11,7 @@ class Person(models.Model):
         "Pet",
         verbose_name="pets",
         related_name="people",
-        through="PersonPets",
+        through="PersonPetsNonDeletedView",
     )
 
     def __str__(self) -> str:

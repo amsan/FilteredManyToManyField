@@ -1,6 +1,7 @@
 from migrate_sql.config import SQLItem
 
 from filtered_many_to_many.models.view import (
+    PersonPetsNonDeletedView,
     QuerySetViewModel,
 )
 
@@ -30,4 +31,5 @@ def create_queryset_view_sql_item(model: QuerySetViewModel) -> SQLItem:
 
 
 sql_items = [
+    create_queryset_view_sql_item(PersonPetsNonDeletedView),
 ]

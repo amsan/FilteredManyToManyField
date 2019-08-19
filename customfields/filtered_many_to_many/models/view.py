@@ -3,6 +3,8 @@ from typing import Any, Dict, Tuple, Type
 
 from django.db import models
 
+from filtered_many_to_many.models.base import PersonPets
+
 
 def clone_field_without_related_name(
     field: models.Field,
@@ -62,3 +64,7 @@ class QuerySetViewModel(models.Model, metaclass=QuerySetViewModelMeta):
     class Meta:
         abstract = True
 
+
+class PersonPetsNonDeletedView(QuerySetViewModel):
+    class Meta:
+        queryset = PersonPets.objects.filter(is_deleted=False)
