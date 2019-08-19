@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     # 'django.contrib.messages',
     # 'django.contrib.staticfiles',
     'filtered_many_to_many',
+    'migrate_sql',
 ]
 
 MIDDLEWARE = [
