@@ -18,93 +18,33 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Person',
             fields=[
-                (
-                    'id',
-                    models.UUIDField(
-                        default=uuid.uuid4,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name='id',
-                    )
-                ),
-                (
-                    'name',
-                    models.CharField(
-                        max_length=255,
-                        verbose_name='name',
-                    )
-                ),
+                ('id', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False, verbose_name='id')),
+                ('name', models.CharField(max_length=255, verbose_name='name')),
             ],
         ),
         migrations.CreateModel(
             name='PersonPets',
             fields=[
-                (
-                    'id',
-                    models.UUIDField(
-                        default=uuid.uuid4,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name='id',
-                    )
-                ),
-                (
-                    'is_deleted',
-                    models.BooleanField(
-                        default=False,
-                        verbose_name='is deleted',
-                    )
-                ),
-                (
-                    'person',
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        related_name='pet_relations',
-                        to='filtered_many_to_many.Person',
-                        verbose_name='person',
-                    )
-                ),
+                ('id', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False, verbose_name='id')),
+                ('is_deleted', models.BooleanField(default=False, verbose_name='is deleted')),
+                ('person', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='pet_relations', to='filtered_many_to_many.Person', verbose_name='person')),
             ],
         ),
         migrations.CreateModel(
             name='Pet',
             fields=[
-                (
-                    'id',
-                    models.UUIDField(
-                        default=uuid.uuid4,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name='id',
-                    )
-                ),
-                (
-                    'name',
-                    models.CharField(
-                        max_length=255,
-                        verbose_name='name',
-                    )
-                ),
+                ('id', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False, verbose_name='id')),
+                ('name', models.CharField(max_length=255, verbose_name='name')),
             ],
         ),
         migrations.AddField(
             model_name='personpets',
             name='pet',
-            field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE,
-                related_name='person_relations',
-                to='filtered_many_to_many.Pet',
-                verbose_name='pet',
-            ),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='person_relations', to='filtered_many_to_many.Pet', verbose_name='pet'),
         ),
         migrations.AddField(
             model_name='person',
             name='pets',
-            field=models.ManyToManyField(
-                related_name='people',
-                through='filtered_many_to_many.PersonPets',
-                to='filtered_many_to_many.Pet',
-                verbose_name='pets',
-            ),
+            field=models.ManyToManyField(related_name='people', through='filtered_many_to_many.PersonPets', to='filtered_many_to_many.Pet', verbose_name='pets'),
         ),
     ]
